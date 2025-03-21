@@ -34,7 +34,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Created and configured two virtual machines (Windows 10 and Ubuntu) within the same virtual network and subnet to simulate real-world network environments. Verified inter-VM connectivity using ICMP ping and analyzed packet exchange with Wireshark. This lab demonstrated my ability to set up, test, and troubleshoot basic network communication between operating systems.
 </p>
 <br />
 
