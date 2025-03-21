@@ -34,7 +34,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Created and configured two virtual machines (Windows 10 and Ubuntu) within the same virtual network and subnet to simulate real-world network environments. Verified inter-VM connectivity using ICMP ping and analyzed packet exchange with Wireshark. This lab demonstrated my ability to set up, test, and troubleshoot basic network communication between operating systems.
+Created and configured two virtual machines (Windows 10 and Ubuntu) within the same virtual network and subnet to simulate real-world network environments.This step established the base environment for future hands-on networking labs. I would then ensure that both virtual machines function on the same virtual network. This step is crucial for successful network operations.
+  
+Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address.
+
+I would then ensure that both virtual machines function on the same virtual network. This step is crucial for successful network operations.
 </p>
 <br />
 
