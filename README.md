@@ -35,7 +35,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 Figure 1: Azure VM List Showing Windows 10 and Ubuntu VM
   <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+</p>![Untitled design (1)](https://github.com/user-attachments/assets/4a829602-7da9-4621-a70d-0fc1a77c0154)
+
 Created and configured two virtual machines (Windows 10 and Ubuntu) within the same virtual network and subnet to simulate real-world network environments.This step established the base environment for future hands-on networking labs. I would then ensure that both virtual machines function on the same virtual network. This step is crucial for successful network operations.
 
 Figure 1: Azure VM List Showing Windows 10 and Ubuntu VM
