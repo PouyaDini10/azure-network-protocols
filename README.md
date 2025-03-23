@@ -34,8 +34,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p>
 Figure 1: Azure VM List Showing Windows 10 and Ubuntu VM
   <p>
-<img src="https://imgur.com/a/2dYi4Bf" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p> https://imgur.com/a/2dYi4Bf
+
 <img width="336" alt="image" src="https://github.com/user-attachments/assets/4739c93e-5bc0-42b9-aa32-227d4eded3cf" />
 
 
