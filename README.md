@@ -30,20 +30,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Actions and Observations</h2>
 
+Created and configured two virtual machines (Windows 10 and Linux(Ubuntu)) within the same virtual network and subnet to simulate real-world network environments.This step established the base environment for future hands-on networking labs.
 
-<p>
-Figure 1: Azure VM List Showing Windows 10 and Ubuntu VM
-  <p>
-
-<img width="336" alt="image" src="https://github.com/user-attachments/assets/4739c93e-5bc0-42b9-aa32-227d4eded3cf" />
-
-
-
-Created and configured two virtual machines (Windows 10 and Ubuntu) within the same virtual network and subnet to simulate real-world network environments.This step established the base environment for future hands-on networking labs. I would then ensure that both virtual machines function on the same virtual network. This step is crucial for successful network operations.
-
-Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address.
+<img width="477" alt="image" src="https://github.com/user-attachments/assets/33409bd8-3172-4792-8e04-09346970de02" />
 
 I would then ensure that both virtual machines function on the same virtual network. This step is crucial for successful network operations.
+
+<img width="222" alt="image" src="https://github.com/user-attachments/assets/c3fe0a2f-1129-41c5-90bc-3307c426f30a" />
+<img width="203" alt="image" src="https://github.com/user-attachments/assets/57f1f3bd-098a-4adb-af47-21d045451f0a" />
+
+Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address. Because I'm outside of Azure’s network, a public IP address would be appropriate on establishing a remote connection using my Windows machine. 
+
+<img width="306" alt="image" src="https://github.com/user-attachments/assets/b3d49ac2-7c5f-4955-a985-8e2c6090e680" />
+
 </p>
 <br />
 
