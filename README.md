@@ -41,7 +41,24 @@ I would then ensure that both virtual machines function on the same virtual netw
 
 Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address. Because I'm outside of Azure’s network, a public IP address would be appropriate on establishing a remote connection using my Windows machine. 
 
-<img width="306" alt="image" src="https://github.com/user-attachments/assets/b3d49ac2-7c5f-4955-a985-8e2c6090e680" />
+Within my Windows virtual machine, I'm going to open wireshark which is a network protocol analyzer used to capture network traffic and we're going to initiate a simple packet capture. 
+
+Key network protocols to be mindful of:
+
+TCP - a connection oriented, reliable, and ordered network protocol that ensures all data is error checked prior to transmission.
+
+UDP - a connectionless network protocol, used for fast and lightweight transmission of data with minimal overhead.
+
+DNS - establishes IP addresses for domain names(www.google.com).
+
+DHCP - Assigns IP addresses to devices on a network automatically. 
+
+ICMP - Used for diagnostic purposes, e.g., pinging another device on the network.
+
+SSH - Securely connects to remote systems (commonly used for command-line access).
+
+![image](https://github.com/user-attachments/assets/c722b5ed-1759-43a0-8d90-6f4c7df8974b)
+
 
 </p>
 <br />
