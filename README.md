@@ -1,3 +1,5 @@
+
+
 <p align="center">
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
@@ -30,6 +32,8 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Actions and Observations</h2>
 
+**Setting up the virtual machines:**
+
 Created and configured two virtual machines (Windows 10 and Linux(Ubuntu)) within the same virtual network and subnet to simulate real-world network environments.This step established the base environment for future hands-on networking labs.
 
 <img width="477" alt="image" src="https://github.com/user-attachments/assets/33409bd8-3172-4792-8e04-09346970de02" />
@@ -41,7 +45,7 @@ I would then ensure that both virtual machines function on the same virtual netw
 
 Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address. Because I'm outside of Azure’s network, a public IP address would be appropriate on establishing a remote connection using my Windows machine. 
 
-
+**Wireshark Packet Capture:**
 
 Within my Windows virtual machine, I'm going to open wireshark which is a network protocol analyzer used to capture network traffic and we're going to initiate a simple packet capture. 
 
@@ -59,24 +63,28 @@ ICMP - Used for diagnostic purposes, e.g., pinging another device on the network
 
 SSH - Securely connects to remote systems (commonly used for command-line access).
 
-![image](https://github.com/user-attachments/assets/c722b5ed-1759-43a0-8d90-6f4c7df8974b)
+**Observe ICMP Traffic:**
+
+Now that we have a good understanding of how wireshark operates, the next plan of action would be to analyze ICMP traffic. The network protocol ICMP is what ping uses and it’s a unique protocol that can be used for diagnostic purposes. What do I mean by this, well simply put ICMP can be thought of as like a messenger. For instance, is google reachable using our device. 
+
+For good practicality, lets try and communicate with our Linux virtual machine. To do this we will first need the Linux VM’s private IP address and we will use the ping command in powershell to commence the operation. Afterwards, in Wireshark filter for ICMP traffic and observe.
+
+![image](https://github.com/user-attachments/assets/936c91a1-01fc-409e-9a37-af7ecdeb21e3)
 
 
-</p>
-<br />
+As you may have noticed, we used the ping command from our source(10.0.0.4) to reach the destination(10.0.0.5) and the execution was successful. Further analyzing the details, we sent 4 Echo ICMP Requests and we received 4 Echo replies from the Linux machine. With a 0% loss and at a fast execution rate. We can conclude that our Windows VM(10.0.0.4) can successfully reach the Linux VM(10.0.0.5) with a fast and stable connection.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+![image](https://github.com/user-attachments/assets/7f1c3637-3f04-4929-a1eb-febcbbe04f65)
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+
+**Configuring the Linux VM's NSG's(Network Security Groups):**
+
+
+
+
+
+
+
+
+
+
