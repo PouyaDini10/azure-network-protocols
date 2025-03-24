@@ -89,7 +89,48 @@ Note - a perpetual ping command is where you're requesting information non-stop 
 
 ![image](https://github.com/user-attachments/assets/10f31eb1-21c9-456d-a5bb-c76ea8063014)
 
-As you can see, the Windows VM(10.0.0.4) sent in some requests, the requests were sent successfully, but the Linux VM(10.0.0.5) ignored the requests. Thus, the request's time out on every request. We can safely conclude we have not established feasible connection to our Linux virtual machine. 
+As you can see, the Windows VM(10.0.0.4) sent in some requests, the requests were sent successfully, but the Linux VM(10.0.0.5) ignored the requests. In our powershell interface, we can see this with the "Request timed out" message. We can safely conclude we have not established a feasible connection to our Linux virtual machine.  
+
+
+**Observe SSH(Secure Shell) Traffic:**
+
+<img width="441" alt="image" src="https://github.com/user-attachments/assets/1fae5267-c304-416b-930b-d7de624dd563" />
+
+In this portion of the lab, we will exmaine SSH traffic. A quick definition, SSH(Secure Shell) is used to make a secure connection from one computer to another computer over an unsecured network. 
+
+In essence, SSH provides a secured encrypted tunnel so you can:
+- Remotely log in to another computer
+- Secure File Transfers
+- Run Commands
+- Automation
+
+
+**Observe DHCP(Dynamic Host Configuration Protocol) Traffic:**
+
+<img width="200" alt="image" src="https://github.com/user-attachments/assets/e12c9d21-5326-42f5-9114-7b33b2e7ce8b" />
+
+DHCP is a network protocol used to automatically assign IP addresses and other network settings(such as subnet mask,gateway,DNS) to devices on a network.
+
+
+**Observe DNS(Domain Name System) Traffic**
+
+
+<img width="488" alt="image" src="https://github.com/user-attachments/assets/d7157dc6-8b70-4904-b399-0e598c7eb9ef" />
+
+
+DNS translates domain names(google.com) into IP addresses(8.8.8.8) so your computer can find and communicate with the correct server. 
+
+
+
+**Observe RDP(Remote Desktop Protocol) Traffic**
+
+
+<img width="512" alt="image" src="https://github.com/user-attachments/assets/6d34f37d-3e1e-43ae-9e90-283baf503477" />
+
+
+RDP stands for Remote Desktop Protocol and it is a Microsoft protocol that allows you to remotely connect and control another Windows computer or server(as if you were sitting in front). 
+
+
 
 
 
