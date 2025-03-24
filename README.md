@@ -77,7 +77,24 @@ As you may have noticed, we used the ping command from our source(10.0.0.4) to r
 ![image](https://github.com/user-attachments/assets/7f1c3637-3f04-4929-a1eb-febcbbe04f65)
 
 
-**Configuring the Linux VM's NSG's(Network Security Groups):**
+**Configuring a Firewall(NSG's(Network Security Groups)):**
+
+To make this lab a little interesting, I want to now observe network connectivity if a security procedure was established in the Linux VM’s network settings and then observe the ICMP traffic. This process is simple, on Azure you will access the Linux VM’s Network Security Group’s and deny any incoming ICMP traffic. Should look something like this:
+
+<img width="434" alt="image" src="https://github.com/user-attachments/assets/66665f5f-e5c4-4fd4-948b-5ed94a89a38a" />
+
+Now back in our virtual environment, initiate a perpetual ping command(ping 10.0.0.5 -t) and now observe the ICMP traffic:
+
+Note - a perpetual ping command is where you're requesting information non-stop until you manually disable it.
+
+![image](https://github.com/user-attachments/assets/10f31eb1-21c9-456d-a5bb-c76ea8063014)
+
+As you can see, the Windows VM(10.0.0.4) sent in some requests, the requests were sent successfully, but the Linux VM(10.0.0.5) ignored the requests. Thus, the request's time out on every request. We can safely conclude we have not established feasible connection to our Linux virtual machine. 
+
+
+
+
+
 
 
 
