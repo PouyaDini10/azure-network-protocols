@@ -41,6 +41,8 @@ I would then ensure that both virtual machines function on the same virtual netw
 
 Then, I would establish a remote desktop connection with the Windows 10 virtual machine using its public IP address. Because I'm outside of Azure’s network, a public IP address would be appropriate on establishing a remote connection using my Windows machine. 
 
+
+
 Within my Windows virtual machine, I'm going to open wireshark which is a network protocol analyzer used to capture network traffic and we're going to initiate a simple packet capture. 
 
 Key network protocols to be mindful of:
