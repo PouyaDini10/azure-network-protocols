@@ -96,7 +96,7 @@ As you can see, the Windows VM(10.0.0.4) sent in some requests, the requests wer
 
 <img width="441" alt="image" src="https://github.com/user-attachments/assets/1fae5267-c304-416b-930b-d7de624dd563" />
 
-In this portion of the lab, we will exmaine SSH traffic. A quick definition, SSH(Secure Shell) is used to make a secure connection from one computer to another computer over an unsecured network. 
+In this portion of the lab, we will examine SSH traffic. A quick definition: SSH(Secure Shell) is used to connect securely from one computer to another over an unsecured network.
 
 In essence, SSH provides a secured encrypted tunnel so you can:
 - Remotely log in to another computer
@@ -104,6 +104,25 @@ In essence, SSH provides a secured encrypted tunnel so you can:
 - Run Commands
 - Automation
 
+To get started, we will need to remotely connect to our Linux VM through powershell and the command prompt would look something like this: **ssh labuser@ private IP address**
+Once you input all the specifications correctly, you will be commanded to enter the password for the username of the Linux virtual machine. You will notice immediately that when entering the password, you won't see the characters being written, but it is being typed. Once you log in, your screen should read:
+
+![image](https://github.com/user-attachments/assets/00cf2f1a-b78f-4632-8f16-6ddd9f35f01b)
+
+
+To clarify, we are using the SSH(Secure Shell) protocol to gain remote access to our Linux machine on the same private network. A private IP address would be feasible because our Azure virtual machines exist on the same virtual network.  
+
+From here, execute some commands like:
+- hostname
+- pwd
+- whoami
+
+![image](https://github.com/user-attachments/assets/856ff1be-9ed9-414e-9d1b-9b460a4bc02a)
+
+Now let's observe SSH traffic; opening Wireshark will immediately commence packet captures. Initiate a command in PowerShell, like "hostname," and observe the produced SSH traffic. Under SSH protocol, there will be an encrypted packet, but the payload is unaccessible. Here, upon careful observation, all the details of the packet capture are encrypted. 
+
+**This screenshot shows secure SSHv2 traffic between two Azure VMs. The data is encrypted end-to-end, demonstrating secure remote access and traffic analysis using Wireshark.**
+![image](https://github.com/user-attachments/assets/b3180632-ac2e-4f90-9308-7220c48e8957)
 
 **Observe DHCP(Dynamic Host Configuration Protocol) Traffic:**
 
