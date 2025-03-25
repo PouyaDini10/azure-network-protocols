@@ -94,7 +94,8 @@ As you can see, the Windows VM(10.0.0.4) sent in some requests, the requests wer
 
 **Observe SSH(Secure Shell) Traffic:**
 
-<img width="441" alt="image" src="https://github.com/user-attachments/assets/1fae5267-c304-416b-930b-d7de624dd563" />
+<img width="175" alt="image" src="https://github.com/user-attachments/assets/01ca4192-3450-4eb6-a2e4-08b673612cb3" />
+
 
 In this portion of the lab, we will examine SSH traffic. A quick definition: SSH(Secure Shell) is used to connect securely from one computer to another over an unsecured network.
 
