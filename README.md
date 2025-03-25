@@ -125,11 +125,41 @@ Now let's observe SSH traffic; opening Wireshark will immediately commence packe
 **This screenshot shows secure SSHv2 traffic between two Azure VMs. The data is encrypted end-to-end, demonstrating secure remote access and traffic analysis using Wireshark.**
 ![image](https://github.com/user-attachments/assets/b3180632-ac2e-4f90-9308-7220c48e8957)
 
+
+
+
 **Observe DHCP(Dynamic Host Configuration Protocol) Traffic:**
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/e12c9d21-5326-42f5-9114-7b33b2e7ce8b" />
 
+**What is a DHCP network protocol?**
+
 DHCP is a network protocol used to automatically assign IP addresses and other network settings(such as subnet mask,gateway,DNS) to devices on a network.
+
+**DORA Process:**
+
+- Discover(Client asks for an IP)
+- Offer(Server offers IP)
+- Request(Client requests the offered IP)
+- Ask(Server acknowledges and assigns it)
+
+The DORA process will be useful when analyzing the packet captures within wireshark.
+
+For this segment of the networking lab, I will establish a new IP address from my Windows 10 VM using the command line for DHCP analysis. On the Powershell interface, I will execute two notable commands: ipconfig /release and ipconfig /renew. During this process, we will observe the generated DHCP traffic. 
+
+
+**Simulating DHCP Lease Renewal via Batch File and PowerShell**
+
+Although there are a few other techniques for resetting DHCP activity, I will use a batch file method for this lab. Essentially, what I am going to do is in notepad I will write this: 
+
+ipconfig /release
+ipconfig /renew
+
+I saved it on my C drive under Program Data and named the document dhcp.bat to quickly identify the batch file.
+
+In Powershell, access your document by inputting cd c:/programdata followed by ls(command to list files). You should see the batch document at the bottom of the list of contents displayed.
+
+![image](https://github.com/user-attachments/assets/1d246855-afd3-452c-b6bf-545c9848ca55)
 
 
 **Observe DNS(Domain Name System) Traffic**
