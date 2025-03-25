@@ -125,9 +125,6 @@ Now let's observe SSH traffic; opening Wireshark will immediately commence packe
 **This screenshot shows secure SSHv2 traffic between two Azure VMs. The data is encrypted end-to-end, demonstrating secure remote access and traffic analysis using Wireshark.**
 ![image](https://github.com/user-attachments/assets/b3180632-ac2e-4f90-9308-7220c48e8957)
 
-
-
-
 **Observe DHCP(Dynamic Host Configuration Protocol) Traffic:**
 
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/e12c9d21-5326-42f5-9114-7b33b2e7ce8b" />
@@ -146,9 +143,9 @@ DHCP is a network protocol used to automatically assign IP addresses and other n
 The DORA process will be useful when analyzing the packet captures within wireshark.
 
 For this segment of the networking lab, I will establish a new IP address from my Windows 10 VM using the command line for DHCP analysis. On the Powershell interface, I will execute two notable commands: ipconfig /release and ipconfig /renew. During this process, we will observe the generated DHCP traffic. 
+<br><br><br>
+**Using PowerShell to Locate and Run a Custom DHCP Batch Script**
 
-
-**Simulating DHCP Lease Renewal via Batch File and PowerShell**
 
 Although there are a few other techniques for resetting DHCP activity, I will use a batch file method for this lab. Essentially, what I am going to do is in notepad I will write this: 
 
@@ -160,7 +157,22 @@ I saved it on my C drive under Program Data and named the document dhcp.bat to q
 In Powershell, access your document by inputting cd c:/programdata followed by ls(command to list files). You should see the batch document at the bottom of the list of contents displayed.
 
 ![image](https://github.com/user-attachments/assets/1d246855-afd3-452c-b6bf-545c9848ca55)
+<br><br><br>
+**Automating DHCP Lease Renewal with Batch Scripting and Network Traffic Analysis**
 
+![image](https://github.com/user-attachments/assets/676a15b3-30f4-4224-abf3-dc0ef32d14f6)
+
+<br><br><br><br>
+
+**Step-by-Step Overview of the DHCP Lease Process (DORA + Release)**
+
+<img width="356" alt="image" src="https://github.com/user-attachments/assets/3bd9bdc9-df90-4f72-b678-e0ce166b814f" />
+<br><br><br><br>
+Some key points to highlight when assessing your current operations: to filter for DHCP traffic, it is appropriate to utilize this query: udp.port == 67 || udp.port == 68
+<br><br>
+The command .\dhcp.bat will begin the entire DORA process from start to finish. Allow some time, and you'll soon see DHCP network traffic in Wireshark. Upon further investigation, it's common for the server to issue back the same IP address as the one we had before. 
+
+<br><br><br><br>
 
 **Observe DNS(Domain Name System) Traffic**
 
