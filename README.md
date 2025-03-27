@@ -180,9 +180,57 @@ The command .\dhcp.bat will begin the entire DORA process from start to finish. 
 <img width="488" alt="image" src="https://github.com/user-attachments/assets/d7157dc6-8b70-4904-b399-0e598c7eb9ef" />
 
 
-DNS translates domain names(google.com) into IP addresses(8.8.8.8) so your computer can find and communicate with the correct server. 
+DNS translates domain names(google.com) into IP addresses(8.8.8.8) so your computer can find and communicate with the correct server. It's because of DNS servers humans don't have to memorize IP addresses. 
+
+For example, suppose a user is unable to connect to www.XYZ.com(an example website) in most cases. In that case, it's a DNS issue, not an internet issue, and we can perform a fundamental network analysis, such as utilizing nslookup or ping to analyze the network traffic. 
+
+<br><br>
+
+DNS observation:
+- Filter for DNS traffic on Wireshark
+- Observe a specific packet capture
+- Perform a basic nslookup to any website
 
 
+<br><br>
+**DNS Traffic Analysis Using Wireshark: Real-Time Query and Response Inspection**
+
+![image](https://github.com/user-attachments/assets/fcc41eaf-0090-46d7-a5c2-3719638885c4)
+
+To clarify, this is a very standard DNS request and response communication between 10.0.0.4(Windows 10 VM) and 168.63.129.16(Azure DNS Server). 
+
+Assessing the first network packet capture, 87 & 88, you can see that this DNS lookup failed. Packet 87 displays 10.0.0.4, requesting," What is the IP address for: wpad.r44m1rjgyo2u3pbzgd1iruknq?" The DNS server responds, " No such name exists." This is a common issue within the parameters of proxies. 
+
+Moving forward to the following packet capture, 1980 & 1981, our virtual machine sent in a request to identify the IP address for v10.events.data.microsoft.com. The server responded with the appropriate response. 
+
+This demonstrates both a typical failed DNS lookup related to proxy auto-discovery and a successful query for a legitimate Microsoft service. Understanding these responses is essential for identifying normal vs. abnormal network behavior.
+<br><br>
+**DNS Query Analysis: www.disney.com**
+
+To further our understanding of DNS fundamentals, I want to analyze network traffic for disney.com. A simple PowerShell command, "nslookup www.disney.com," will do the trick. From there, we will see what appears in Wireshark. 
+<br><br><br><br>
+![image](https://github.com/user-attachments/assets/ea54f014-9ee1-4e19-b575-d9608888fc12)
+<br><br><br><br>
+
+**Phase 1: Internal DNS Attempts (Failed)**
+At first, my computer (10.0.0.4) tried to find the IP address for www.disney.com by checking internal network versions of the domain, such as:
+
+www.disney.com.r44m1rjgyo2u3pbzgd1iruknqf.xx.internal.cloudapp.net
+www.disney.com.xx.internal.cloudapp.net
+www.disney.com.internal.cloudapp.net
+
+On each attempt, the DNS server responded with, "No such name."  These kinds of internal checks are common in cloud environments like Microsoft Azure. They're just your system checking if the domain exists locally before going to the Internet.
+
+**Phase 2: Real DNS Response (Success)**
+In packet **105024**, the real query for www.disney.com was finally sent out.
+
+The DNS server responded with:
+
+A CNAME (alias) pointing to:
+video.disney.com.edgesuite.net
+
+Then another CNAME pointing to:
+a1996.dscf1.akamai.net
 
 **Observe RDP(Remote Desktop Protocol) Traffic**
 
