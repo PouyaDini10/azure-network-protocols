@@ -1,6 +1,12 @@
 # 🔐 Network Security Groups (NSGs) and Traffic Inspection in Azure
 
 <p align="center">
+  <a href="https://www.youtube.com/watch?v=sDJwZ8QtOBk&t=7s" target="_blank">
+    <img src="https://img.youtube.com/vi/sDJwZ8QtOBk/0.jpg" alt="Watch the Lab on YouTube" width="600"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination" width="400"/>
 </p>
 
